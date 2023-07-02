@@ -2,6 +2,10 @@
 import {useRouter} from "next/navigation"
 import {twMerge} from "tailwind-merge"
 import {RxCaretRight,RxCaretLeft} from 'react-icons/rx'
+import {HiHome} from 'react-icons/hi'
+import {BiSearch} from 'react-icons/bi'
+import Button from './Button'
+
 interface HeaderProps{
     children: React.ReactNode;
     className?: string;
@@ -38,33 +42,95 @@ const Header: React.FC<HeaderProps> = ({
                     gap-x-2
                     items-center
                 ">
-                    <button className='
-                        rounded-full
-                        bg-black
-                        flex
-                        items-center
-                        justify-center
-                        hover:opacity-75
-                        transition
-                    '>
+                    <button 
+                        onClick ={() =>router.forward()}
+                        className='
+                            rounded-full
+                            bg-black
+                            flex
+                            items-center
+                            justify-center
+                            hover:opacity-75
+                            transition
+                        '>
                         <RxCaretLeft className="text-white" size={35}/>
                     </button>
-                    <button className='
+                    <button 
+                        onClick ={() =>router.forward()}
+                        className='
+                            rounded-full
+                            bg-black
+                            flex
+                            items-center
+                            justify-center
+                            hover:opacity-75
+                            transition
+                        '>
+                        <RxCaretRight className="text-white" size={35}/>
+                    </button>
+                </div>
+                <div className=" flex md:hidden gap-x-2 items-center">
+                    <button className="
                         rounded-full
-                        bg-black
+                        p-2
+                        bg-white
                         flex
                         items-center
                         justify-center
                         hover:opacity-75
                         transition
-                    '>
-                        <RxCaretRight className="text-white" size={35}/>
+                    ">
+                        <HiHome className="text-black" size={20}/>
                     </button>
-                    
-
+                    <button className="
+                        rounded-full
+                        p-2
+                        bg-white
+                        flex
+                        items-center
+                        justify-center
+                        hover:opacity-75
+                        transition
+                    ">
+                        <BiSearch className="text-black" size={20}/>
+                    </button>
                 </div>
-
+                <div className="
+                    flex
+                    justify-between
+                    items-center
+                    gap-x-4
+                ">
+                    <>
+                        <div>
+                            <Button
+                                onClick={() => {}}
+                                className="
+                                    bg-transparent
+                                    text-neutral-300
+                                    font-medium
+                                "
+                            >
+                                sign up
+                            </Button>
+                        </div>
+                        <div>
+                            <Button
+                                onClick={() => {}}
+                                className="
+                                    bg-white
+                                    text-black
+                                    px-6
+                                    py-2
+                                "
+                            >
+                                sign in
+                            </Button>
+                        </div>
+                    </>
+                </div>
             </div>
+            {children}
         </div>
     );
 }
