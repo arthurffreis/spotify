@@ -41,8 +41,8 @@ const Header: React.FC<HeaderProps> = ({
         } else{
             toast.success('Logged out')
         }
-
     }
+
 
     return (
         <div className={twMerge(`
@@ -103,7 +103,7 @@ const Header: React.FC<HeaderProps> = ({
                         hover:opacity-75
                         transition
                     ">
-                        <HiHome className="text-black" size={20}/>
+                        <HiHome className="text-black" size={20} onClick={ () => router.push('/')}/>
                     </button>
                     <button className="
                         rounded-full
@@ -115,7 +115,7 @@ const Header: React.FC<HeaderProps> = ({
                         hover:opacity-75
                         transition
                     ">
-                        <BiSearch className="text-black" size={20}/>
+                        <BiSearch className="text-black" size={20} onClick={ () => router.push('/search')}/>
                     </button>
                 </div>
                 <div className="
