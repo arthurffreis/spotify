@@ -30,6 +30,11 @@ const AuthModal = () => {
       onClose();
     }
   }
+  useEffect(() => {
+    if (session) {
+      router.push('/'); 
+    }
+  }, [session, router, onClose]);
 
   return (
     <Modal 
